@@ -1,125 +1,313 @@
+import 'dart:developer';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'secondscreen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main () {
+  runApp(const myapp());
 }
+class myapp extends StatelessWidget {
+  const myapp({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: homescreen(),
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+class homescreen extends StatefulWidget {
+  const homescreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<homescreen> createState() => _homescreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _homescreenState extends State<homescreen> {
+double _currentHeight = 183;
+int weight = 0;
+int Age = 0;
+int minvalue = 0;
+int maxvalue = 100;
+void incrementcounter () {
+  if(weight<maxvalue){
+  setState(() {
+    weight++;
+  });
+}
+}
+void decrementcounter (){
+  if(weight>minvalue){
+  setState(() {
+  
+    weight--;
+    
+  });
+}
+}
+void counterincrement () {
+  if(Age<maxvalue){
+  setState(() {
+    Age++;
+  });
+}
+}
+void counterdecrement () {
+  if(Age>0){
+  setState(() {
+    Age--;
+  });
+}
+}
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Color(0XFF0B1034),
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        backgroundColor: Colors.black26,
+        
+        title: Text('BMI CALCULATOR',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),),
+        
+        leading: Icon(Icons.menu,color: Colors.white,),
+        
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: Padding(
+        padding: EdgeInsets.all(11),
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
+         crossAxisAlignment: CrossAxisAlignment.stretch,
+         children: [
+          // In this row we add to containers and their data 
+          Row(
+            children: [
+              SizedBox(width: 20,),
+              // This is the container 1 
+              Container(
+                // This is the size and specification of container that how it looks 
+                height: 150,
+                width: 150,
+                decoration: BoxDecoration(
+                  border: Border.all(style: BorderStyle.solid),
+                    color: Color(0XFF262A4C),
+                ),
+                // IN this we add icon nad text that display in the container 1 
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.male,color: Colors.white,size: 70,weight: 20,),
+                    Text('Male',style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.w500),)
+                  ],
+                ),
+              ),
+              SizedBox(width: 50,),
+              // From here the 2nd container will be start 
+              Container(
+                             
+                              height: 150,
+                              width: 150,
+                             
+                              decoration: BoxDecoration(
+              border: Border.all(style: BorderStyle.solid),
+               color: Color(0XFF262A4C),
+                              ),
+                              //From here we display the icon and text display in container 2
+                              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.female,color: Colors.white,size: 70,weight: 20,),
+                    Text('Female',style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.w500),)
+                  ],
+                ),
+                            ),
+            ],
+          ),
+          //Here the row ends 
+          SizedBox(height: 30,),
+          // From here the 3rd container will be start and add a new row for the container
+          Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+              Container(
+                width: 350,
+                height: 150,
+                decoration: BoxDecoration(
+                  border: Border.all(style: BorderStyle.solid),
+                  color: Color(0XFF262A4C),
+                ),
+                child:Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('height',style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 2,
+                      fontSize: 20,
+                    ),
+                    ),
+                    Text(
+                      '${_currentHeight.toInt()} cm',
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Slider(value: _currentHeight,
+                    min: 100,
+                    max: 200,
+                    activeColor: Colors.pink,
+                    inactiveColor: Colors.grey,
+                     onChanged: (double value){
+                      setState(() {
+                        _currentHeight=value;
+                      });
+                    })
+                  ],
+                ) ,
+              ),
+             ],
+          ),
+          // here the row ends
+          SizedBox(height: 20,),
+          // From here we add  a new row top add 2more container 
+          Row(
+             children: [
+              SizedBox(width: 20,),
+              // This is the 4th container 
+
+              Container(
+                
+                height: 150,
+                width: 150,
+                decoration: BoxDecoration(
+                  border: Border.all(style: BorderStyle.solid),
+                    color: Color(0XFF262A4C),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(child: Text('Weight',style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w400),)),
+                    Center(child: Text('$weight',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500,color: Colors.white),)),
+                    // In this row we add the sign of addition and substraction
+                    Row(
+                      children: [
+                        SizedBox(width: 20,),
+                        // This is the container for the addition sign 
+                        Container(
+                          height: 50,
+                          width: 50,
+                          
+                          decoration: BoxDecoration(
+                            color: Color(0xFF222847),
+                            borderRadius: BorderRadius.circular(20),
+                                          
+                          ),
+                          child: IconButton(onPressed: incrementcounter, 
+                          icon: Icon(Icons.add,color:Colors.white,)),
+                        ),
+                        SizedBox(width: 15,),
+                        // This is the container for the substraction sign
+                        Container(
+                          height: 50,
+                          width: 50,
+                          
+                          decoration: BoxDecoration(
+                            color: Color(0xFF222847),
+                            borderRadius: BorderRadius.circular(20),
+                                          
+                          ),
+                          child: IconButton(onPressed: decrementcounter, 
+                          icon: Icon(Icons.remove,color: Colors.white,)
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 50,),
+               //This is the 5th container
+              Container(
+                             
+                              height: 150,
+                              width: 150,
+                             
+                              decoration: BoxDecoration(
+              border: Border.all(style: BorderStyle.solid),
+               color: Color(0XFF262A4C),
+                              ),
+                              child: Column(
+                                mainAxisAlignment:MainAxisAlignment.center,
+                                children: [
+                                   Center(child: Text('Age',style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w400),)),
+                    Center(child: Text('$Age',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500,color: Colors.white),)),
+                    Row(
+                      children: [
+                        SizedBox(width: 20,),
+                        // This is the container for the addition sign 
+                        Container(
+                          height: 50,
+                          width: 50,
+                          
+                          decoration: BoxDecoration(
+                            color: Color(0xFF222847),
+                            borderRadius: BorderRadius.circular(20),
+                                          
+                          ),
+                          child: IconButton(onPressed: counterincrement, 
+                          icon: Icon(Icons.add,color: Colors.white,)),
+                        ),
+                        SizedBox(width: 15,),
+                        // This is the container for the substraction sign
+                        Container(
+                          height: 50,
+                          width: 50,
+                          
+                          decoration: BoxDecoration(
+                            color: Color(0xFF222847),
+                            borderRadius: BorderRadius.circular(20),
+                                          
+                          ),
+                          child: IconButton(onPressed:counterdecrement , 
+                          icon: Icon(Icons.remove,color: Colors.white,)),
+                        ),
+                      ],
+                    ),
+                                ],
+                              ),
+                              
+                            ),
+              
+            ],
+        
+          ),
+          SizedBox(height: 30,),
+          // THis is the 6th container 
+          Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+            children: [
+              GestureDetector(onTap: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('hello'),),);
+              },
+                child: Container(
+                  
+                  width: 350,
+                  height: 70,
+                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,),color: Colors.pink
+                  ),
+                  child: Center(child: Text('On press',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),)),
+                  ),
+                  
+              ),
+            
+              
+              
+              
+            ],
+          ),
+         ],
+               ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
