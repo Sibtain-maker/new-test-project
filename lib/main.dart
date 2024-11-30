@@ -306,13 +306,12 @@ void counterdecrement () {
           mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('hello'),),);
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('this is the snackbar '),),);
               },
                 child: Container(
-                  
                   width: 350,
                   height: 70,
-                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,),color: Colors.pink
+                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,),color: Colors.pink,
                   ),
                   child: Center(child: Text('On press',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),)),
                   ),
@@ -330,3 +329,4 @@ void counterdecrement () {
     );
   }
 }
+// here the project ends 
