@@ -52,7 +52,7 @@ class _UisecoundState extends State<Uisecound> {
             children: [
               
               Container(
-                width: 250,
+                width: 300,
                 height: 400,
                 decoration: BoxDecoration(
                   border: Border.all(style: BorderStyle.solid),
@@ -67,34 +67,36 @@ class _UisecoundState extends State<Uisecound> {
                       
                       child: Text('NORMAL',style: TextStyle(color: Colors.green,fontSize: 20,fontWeight: FontWeight.bold),),
                     ),
-                    SizedBox(height: 20,),
-                    Text('22.2',style: TextStyle(color: Colors.white,fontSize: 50,fontWeight: FontWeight.bold),),
-                    Text('Normal BMI range :',style: TextStyle(color: Colors.white30,fontSize: 20,),),
-                    Text('18,5 - 25kg/m2',style:TextStyle(color: Colors.white,fontSize: 20),),
-                    SizedBox(height: 30,),
-                    Text('You heve a NORMAL body WEIGHT Good JOb',style: TextStyle(color: Colors.white,height: 1.5),textAlign: TextAlign.center,
+                    const SizedBox(height: 20,),
+                    const Text('22.2',style: TextStyle(color: Colors.white,fontSize: 50,fontWeight: FontWeight.bold),),
+                    const Text('Normal BMI range :',style: TextStyle(color: Colors.white30,fontSize: 20,),),
+                    const Text('18,5 - 25kg/m2',style:TextStyle(color: Colors.white,fontSize: 20),),
+                    const SizedBox(height: 30,),
+                    const Text('You heve a NORMAL body WEIGHT Good JOb. Keep it',style: TextStyle(color: Colors.white,height: 1.5),textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 30,),
+                    const SizedBox(height: 30,),
                     Container(
                       height: 30,
                       width: 100,
                       decoration: BoxDecoration(
                         border: Border.all(style: BorderStyle.solid),
-                        color: Color(0XFF181A2E)
+                        color: const Color(0XFF181A2E)
                       ),
-                      child: Center(child: Text('Save Result',style: TextStyle(color: Colors.white30),)),
+                      child: const Center(child: Text('Save Result',style: TextStyle(color: Colors.white30),)),
+
                     )
                   ],
                 ),
               ),
             ],
            ),
-           SizedBox(height: 64,),
+           const SizedBox(height: 64,),
            Container(
           
             height: 80,
             width: 400,
-            decoration: BoxDecoration(
+            decoration:  BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
               color: Colors.pink,
             ),
             child: GestureDetector(
@@ -104,7 +106,7 @@ class _UisecoundState extends State<Uisecound> {
                 }
                 ),
                 );
-               }, child: Center(child: Text('RETURN BACK',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),)),
+               }, child: const Center(child: Text('RETURN BACK',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),)),
             ),
             
            )

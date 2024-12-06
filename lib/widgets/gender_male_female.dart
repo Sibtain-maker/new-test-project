@@ -27,8 +27,8 @@ class _selectedGenderState extends State<selectedGender> {
                 },
                 child: Container(
                   // This is the size and specification of container that how it looks 
-                  height: 150,
-                  width: 150,
+                  height: 160,
+                  width: 175,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color : selectedGender == 'male'
@@ -45,7 +45,7 @@ class _selectedGenderState extends State<selectedGender> {
                   ),
                 ),
               ),
-              const SizedBox(width: 50,),
+              const SizedBox(width: 10,),
               // From here the 2nd container will be start female
               GestureDetector(
                 onTap: () {
@@ -55,8 +55,8 @@ class _selectedGenderState extends State<selectedGender> {
                 },
                 child: Container(
                                
-                                height: 150,
-                                width: 150,
+                                height: 160,
+                                width: 175,
                                
                                 decoration: BoxDecoration(
                borderRadius: BorderRadius.circular(10),

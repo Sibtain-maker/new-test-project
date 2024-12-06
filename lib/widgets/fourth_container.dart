@@ -46,8 +46,8 @@ class _SoloiscontainerState extends State<Soloiscontainer> {
       children: [
         const SizedBox(width: 20,),
         Container(
-          height: 150,
-          width: 150,
+          height: 175,
+          width: 165,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color:const Color(0XFF262A4C),
@@ -55,18 +55,18 @@ class _SoloiscontainerState extends State<Soloiscontainer> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('weight',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+              const Text('weight',style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
               const SizedBox(height: 10,),
-              Text('$weight',style:const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),),
+              Text('$weight',style:const TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white,),),
               const SizedBox(height: 10,),
               //now here we add a row to add two more container
               Row(
                 children: [
-                  const SizedBox(width: 20,),
+                  const SizedBox(width: 40,),
                   Center(
                     child: Container(
-                      width: 30,
-                      height: 30,
+                      width: 40,
+                      height: 40,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(style: BorderStyle.none),
@@ -77,8 +77,8 @@ class _SoloiscontainerState extends State<Soloiscontainer> {
                   ),
                   const SizedBox(width: 20,),
                    Container(
-                    width: 30,
-                    height: 30,
+                    width: 40,
+                    height: 40,
                     decoration: const BoxDecoration(
                       color: Color(0XFF222747),
                       shape: BoxShape.circle,
@@ -91,10 +91,10 @@ class _SoloiscontainerState extends State<Soloiscontainer> {
             ],
           ),
         ),
-        const SizedBox(width: 50,),
+        const SizedBox(width: 25,),
         Container(
-                    width: 150,
-                    height: 150,
+                    width: 165,
+                    height: 175,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color(0XFF262A4C),
@@ -102,16 +102,16 @@ class _SoloiscontainerState extends State<Soloiscontainer> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text('Age',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                        const Text('Age',style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
                         const SizedBox(height: 10,),
-                        Text('$Age',style: TextStyle(color: Colors.white,fontSize: 20),),
+                        Text('$Age',style: TextStyle(color: Colors.white,fontSize: 30),),
                         const SizedBox(height: 10,),
                         Row(
                           children: [
-                            const SizedBox(width: 30,),
+                            const SizedBox(width: 40,),
                             Container(
-                              width: 30,
-                              height: 30,
+                              width: 40,
+                              height: 40,
                               decoration: const BoxDecoration(
                                 color: Color(0XFF222747),
                                 shape: BoxShape.circle,
@@ -121,8 +121,8 @@ class _SoloiscontainerState extends State<Soloiscontainer> {
                             ),
                             const SizedBox(width:20,),
                             Container(
-                              width: 30,
-                              height: 30,
+                              width: 40,
+                              height: 40,
                               decoration: const BoxDecoration(
                                 color: Color(0XFF222747),
                                 shape: BoxShape.circle,

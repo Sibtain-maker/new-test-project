@@ -15,7 +15,7 @@ class _SliderContainerState extends State<SliderContainer> {
              mainAxisAlignment: MainAxisAlignment.center,
              children: [
               Container(
-                width: 350,
+                width: 355,
                 height: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
