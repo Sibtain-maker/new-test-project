@@ -18,7 +18,7 @@ class _SliderContainerState extends State<SliderContainer> {
                 width: 350,
                 height: 150,
                 decoration: BoxDecoration(
-                  border: Border.all(style: BorderStyle.solid),
+                  borderRadius: BorderRadius.circular(10),
                   color: const Color(0XFF262A4C),
                 ),
                 child:Column(

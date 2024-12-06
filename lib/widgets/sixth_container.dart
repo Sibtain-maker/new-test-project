@@ -25,7 +25,8 @@ class _SixthContainerState extends State<SixthContainer> {
                 child: Container(
                   width: 350,
                   height: 70,
-                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,),color: Colors.pink,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                 color:  Colors.pink,
                   ),
                   child: const Center(child: Text('On press',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),)),
                   ),

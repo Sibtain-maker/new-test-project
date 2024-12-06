@@ -1,166 +1,141 @@
-
 import 'package:flutter/material.dart';
 
-class WeightContainer extends StatefulWidget {
-  const WeightContainer({super.key});
+class Soloiscontainer extends StatefulWidget {
+  const Soloiscontainer({super.key});
 
   @override
-  State<WeightContainer> createState() => _WeightContainerState();
+  State<Soloiscontainer> createState() => _SoloiscontainerState();
 }
 
-class _WeightContainerState extends State<WeightContainer> {
-int weight = 0;
-int Age = 0;
-
-int maxvalue = 100;
-int minvalue = 0;
-
-void counterincrement () {
-
-  if(Age<maxvalue){
-  setState(() {
-    Age++;
-  });
-}
-}
-void counterdecrement () {
-  if(Age>0){
-  setState(() {
-    Age--;
-  });
-}
-}
-
-void incrementcounter () {
-  if(weight<maxvalue){
-  setState(() {
-    weight++;
-  });
-}
-}
-
-void decrementcounter (){
-  if(weight>minvalue){
-  setState(() {
-  
-    weight--;
-    
-  });
-}
-}
-
+class _SoloiscontainerState extends State<Soloiscontainer> {
+  int weight = 0;
+  int maxvalue = 100;
+  int minvalue = 0;
+  int Age = 0;
+  void incrementcounter  () {
+    if(weight<maxvalue) {
+      setState(() {
+      weight++;
+    });
+    }
+  }
+  void decrementcounter (){
+    if(weight>minvalue) {
+      setState(() {
+      weight--;
+    });
+    }
+  }
+  void counterincrement (){
+    if(Age<maxvalue) {
+      setState(() {
+      Age++;
+    });
+    }
+  }
+  void counterdecrement (){
+    if(Age>minvalue) {
+      setState(() {
+      Age--;
+    });
+    }
+  }
   @override
   Widget build(BuildContext context) {
-    return Container(
-                
-                height: 150,
-                width: 150,
-                decoration: BoxDecoration(
-                  border: Border.all(style: BorderStyle.solid),
-                    color: Color(0XFF262A4C),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(child: Text('Weight',style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w400),)),
-                    Center(child: Text('$weight',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500,color: Colors.white),)),
-                    // In this row we add the sign of addition and substraction
-                    Row(
-                      children: [
-                        SizedBox(width: 20,),
-                        // This is the container for the addition sign 
-                        Container(
-                          height: 50,
-                          width: 50,
-                          
-                          decoration: BoxDecoration(
-                            color: Color(0xFF222847),
-                            borderRadius: BorderRadius.circular(20),
-                                          
-                          ),
-                          child: IconButton(onPressed: incrementcounter, 
-                          icon: Icon(Icons.add,color:Colors.white,)),
-                        ),
-                        SizedBox(width: 15,),
-                        // This is the container for the substraction sign
-                        Container(
-                          height: 50,
-                          width: 50,
-                          
-                          decoration: BoxDecoration(
-                            color: Color(0xFF222847),
-                            borderRadius: BorderRadius.circular(20),
-                                          
-                          ),
-                          child: IconButton(onPressed: decrementcounter, 
-                          icon: Icon(Icons.remove,color: Colors.white,)
-                          ),
-                        ),
-                      ],
+    return Row(
+      children: [
+        const SizedBox(width: 20,),
+        Container(
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color:const Color(0XFF262A4C),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('weight',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+              const SizedBox(height: 10,),
+              Text('$weight',style:const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),),
+              const SizedBox(height: 10,),
+              //now here we add a row to add two more container
+              Row(
+                children: [
+                  const SizedBox(width: 20,),
+                  Center(
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(style: BorderStyle.none),
+                        color: const Color(0XFF222747)
+                      ),
+                      child: Center(child: IconButton(onPressed:incrementcounter , icon: const Icon(Icons.add,color: Colors.white,))),
                     ),
-                     const SizedBox(height: 20,),
-          // From here we add  a new row top add 2more container 
-          Row(
-             children: [
-              const SizedBox(width: 20,),
-              // This is the 4th container 
-
-              const WeightContainer(),
-              const SizedBox(width: 50,),
-               //This is the 5th container
-              Container(
-                             
-                              height: 150,
-                              width: 150,
-                             
-                              decoration: BoxDecoration(
-              border: Border.all(style: BorderStyle.solid),
-               color: const Color(0XFF262A4C),
-                              ),
-                              child: Column(
-                                mainAxisAlignment:MainAxisAlignment.center,
-                                children: [
-                                   const Center(child: Text('Age',style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w400),)),
-                    Center(child: Text('$Age',style: const TextStyle(fontSize: 30,fontWeight: FontWeight.w500,color: Colors.white),)),
-                    Row(
-                      children: [
-                        const SizedBox(width: 20,),
-                        // This is the container for the addition sign 
-                        Container(
-                          height: 50,
-                          width: 50,
-                          
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF222847),
-                            borderRadius: BorderRadius.circular(20),
-                                          
-                          ),
-                          child: IconButton(onPressed: counterincrement, 
-                          icon: const Icon(Icons.add,color: Colors.white,)),
-                        ),
-                        const SizedBox(width: 15,),
-                        // This is the container for the substraction sign
-                        Container(
-                          height: 50,
-                          width: 50,
-                          
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF222847),
-                            borderRadius: BorderRadius.circular(20),
-                                          
-                          ),
-                          child: IconButton(onPressed:counterdecrement , 
-                          icon: const Icon(Icons.remove,color: Colors.white,)),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-                  ]
                   ),
-  ]
-  ),
+                  const SizedBox(width: 20,),
+                   Container(
+                    width: 30,
+                    height: 30,
+                    decoration: const BoxDecoration(
+                      color: Color(0XFF222747),
+                      shape: BoxShape.circle,
+                    ),
+                    child: IconButton(onPressed: decrementcounter, icon: const Icon(Icons.remove,color: Colors.white,)),
+                   ),
+                   
+                ],
+              )
+            ],
+          ),
+        ),
+        const SizedBox(width: 50,),
+        Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color(0XFF262A4C),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Age',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                        const SizedBox(height: 10,),
+                        Text('$Age',style: TextStyle(color: Colors.white,fontSize: 20),),
+                        const SizedBox(height: 10,),
+                        Row(
+                          children: [
+                            const SizedBox(width: 30,),
+                            Container(
+                              width: 30,
+                              height: 30,
+                              decoration: const BoxDecoration(
+                                color: Color(0XFF222747),
+                                shape: BoxShape.circle,
+                              ),
+                              child: IconButton(onPressed: counterincrement, icon: const Icon(Icons.add,color: Colors.white,)),
+
+                            ),
+                            const SizedBox(width:20,),
+                            Container(
+                              width: 30,
+                              height: 30,
+                              decoration: const BoxDecoration(
+                                color: Color(0XFF222747),
+                                shape: BoxShape.circle,
+                              ),
+                              child: IconButton(onPressed: counterdecrement, icon: const Icon(Icons.remove,color: Colors.white,)),
+
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                   ),
+      ],
     );
   }
 }

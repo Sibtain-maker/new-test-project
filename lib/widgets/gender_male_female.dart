@@ -30,7 +30,7 @@ class _selectedGenderState extends State<selectedGender> {
                   height: 150,
                   width: 150,
                   decoration: BoxDecoration(
-                    border: Border.all(style: BorderStyle.solid),
+                    borderRadius: BorderRadius.circular(10),
                     color : selectedGender == 'male'
                     ? Colors.blue
                       : const Color(0XFF262A4C),
@@ -59,7 +59,7 @@ class _selectedGenderState extends State<selectedGender> {
                                 width: 150,
                                
                                 decoration: BoxDecoration(
-                border: Border.all(style: BorderStyle.solid),
+               borderRadius: BorderRadius.circular(10),
                  color: selectedGender == 'female'
                 ?Colors.pink
                  : const Color(0XFF262A4C),

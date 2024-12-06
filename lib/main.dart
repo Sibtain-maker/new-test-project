@@ -1,5 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:this_theproject/widgets/fourth_container.dart';
+
+import 'package:this_theproject/widgets/gender_male_female.dart';
+import 'package:this_theproject/widgets/sixth_container.dart';
+import 'package:this_theproject/widgets/slider_container.dart';
+
+
 
 void main () {
   runApp(const myapp());
@@ -52,13 +59,15 @@ int maxvalue = 100;
         child: Column(
          crossAxisAlignment: CrossAxisAlignment.stretch,
          children: [
-          
-          
-          //Here the row ends 
-          SizedBox(height: 30,),
-          // From here the 3rd container will be start and add a new row for the container
-          
-          // here the row ends
+          selectedGender(),
+          SizedBox(height: 15,),
+          SliderContainer(),
+          SizedBox(height: 15,),
+          Soloiscontainer(),
+          SizedBox(height: 15,),
+           SixthContainer(),
+
+         
          
                                 ],
                               ),
